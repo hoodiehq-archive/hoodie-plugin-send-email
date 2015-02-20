@@ -64,7 +64,7 @@ suite('test dynamic hook', function () {
     };
 
     var reply = function(msg) {
-      assert.equal('ok', msg, 'should show ok');
+      assert.deepEqual({'ok': true}, msg, 'should show ok');
       done();
     };
 

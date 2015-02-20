@@ -1,6 +1,6 @@
 /**
  * Hoodie plugin send-email
- * An example plugin, this is where you put your frontend code (if any)
+ * Send emails, only when online, though!
  */
 
 /* global Hoodie */
@@ -9,9 +9,11 @@ Hoodie.extend(function (hoodie) {
   'use strict';
 
   // extend the hoodie.js API
-  hoodie.hello = function (name) {
-    return hoodie.task.start('hello', {
-      name: name
+  hoodie.email.sendOnline = function (email) {
+    return hoodie.request('post', '/_plugins/send-email/_api', {
+      data: JSON.stringify(email),
+      processData: false,
+      contentType: 'application/json'
     });
   };
 

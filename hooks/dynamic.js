@@ -65,7 +65,7 @@ module.exports = function (hoodie) {
           return reply('sending email failed: "' + error + '"');
         }
 
-        reply('ok');
+        reply({'ok': true});
       });
 
       return true;
