@@ -9,7 +9,7 @@ Hoodie.extend(function (hoodie) {
   'use strict';
 
   // extend the hoodie.js API
-  hoodie.email.sendOnline = function (email) {
+  hoodie.sendEmail = function (email) {
     return hoodie.request('post', '/_plugins/send-email/_api', {
       data: JSON.stringify(email),
       processData: false,
